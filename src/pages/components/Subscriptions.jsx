@@ -3,7 +3,7 @@ import { petrmegra } from "../../assets";
 
 const Subscriptions = () => {
   return (
-    <div className="md:w-[70%] mx-auto flex items-center justify-between pt-20 pb-20">
+    <div className="md:w-[70%] mx-auto flex flex-col md:flex-row items-center md:justify-between pt-20 pb-20">
       <div className="max-w-[328px] flex flex-col">
         <h2 className="font-playfair text-black font-semibold text-[36px] leading-[47.99px]">
           Subscriptions
