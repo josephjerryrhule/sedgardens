@@ -7,7 +7,7 @@ const Collections = () => {
       <h2 className="text-center text-black font-playfair font-semibold text-[36px] leading-[47.99px]">
         See Our Collections
       </h2>
-      <div className="grid grid-cols-4 pt-10 pb-20 gap-[70px]">
+      <div className="grid xs:grid-cols-1 md:grid-cols-4 pt-10 pb-20 gap-[70px]">
         {CollectionItems.map((item, index) => (
           <div
             key={item.title}
