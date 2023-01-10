@@ -1,6 +1,6 @@
 import { bokchoy, buckwheat, radish, shoot } from "../assets";
 
-export const Collections = [
+export const CollectionItems = [
   {
     title: "Microgreens",
     img: bokchoy,
