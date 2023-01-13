@@ -8,6 +8,9 @@ import petrmegra from "./petrmegra.png";
 import radish from "./radish.png";
 import shoot from "./shoot.png";
 import loginimage from "./loginimage.png";
+import search from "./search.svg";
+import cart from "./cart.svg";
+import account from "./account.svg";
 
 export {
   logo,
@@ -20,4 +23,7 @@ export {
   radish,
   shoot,
   loginimage,
+  search,
+  cart,
+  account,
 };

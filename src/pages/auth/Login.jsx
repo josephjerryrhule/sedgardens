@@ -1,8 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, logInWithEmailAndPassword } from "../../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { logo, loginimage } from "../../assets";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (loading) {
+      return;
+    }
+    if (user) navigate("/shop");
+  }, [user, loading]);
+  console.log(user);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
       <div className="flex flex-col w-[90%] md:w-[50%] mx-auto">
@@ -23,28 +37,31 @@ const Login = () => {
         <span className="hidden md:block font-inter text-black font-normal text-[12px] leading-[14px] md:pb-[15px]">
           Enter your email and password to start shopping
         </span>
-        <form action="">
+        <div className="login">
           <div className="w-full emailarea mb-5">
             <input
               type="email"
-              name=""
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Email address"
-              id=""
+              id="loginemail"
               className="w-full bg-gardensform h-[60px] rounded-md pl-7 font-inter text-[16px] leading-[19px] text-[#808080] outline-0 focus:outline-none"
             />
           </div>
           <div className="w-full passwordarea mb-5 md:mb-16">
             <input
               type="password"
-              name=""
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              id=""
+              id="loginpassword"
               className="w-full bg-gardensform h-[60px] rounded-md pl-7 font-inter text-[16px] leading-[19px] text-[#808080] outline-0 focus:outline-none"
             />
           </div>
           <div className="w-full buttonarea mb-16">
             <button
               type="submit"
+              onClick={() => logInWithEmailAndPassword(email, password)}
               className="
               bg-primary text-white font-ibm font-medium text-center
             text-[16px] leading-[20px] w-full h-[60px] rounded-md"
@@ -59,7 +76,7 @@ const Login = () => {
               </p>
             </Link>
           </div>
-        </form>
+        </div>
       </div>
 
       <div className="hidden md:block loginimagearea">

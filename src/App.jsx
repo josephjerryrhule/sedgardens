@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router";
-import { Home } from "./pages";
+import { Home, Shop } from "./pages";
 import { Login, Register, RegisterRetail, ResetPassword } from "./pages/auth";
 
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
         <Route path="register" element={<Register />} exact></Route>
         <Route path="resetpassword" element={<ResetPassword />} exact></Route>
         <Route path="registerretail" element={<RegisterRetail />} exact></Route>
+        <Route path="shop" element={<Shop />} exact></Route>
       </Routes>
     </div>
   );
