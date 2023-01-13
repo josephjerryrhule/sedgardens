@@ -7,6 +7,7 @@ import devi from "./devi.png";
 import petrmegra from "./petrmegra.png";
 import radish from "./radish.png";
 import shoot from "./shoot.png";
+import loginimage from "./loginimage.png";
 
 export {
   logo,
@@ -18,4 +19,5 @@ export {
   petrmegra,
   radish,
   shoot,
+  loginimage,
 };

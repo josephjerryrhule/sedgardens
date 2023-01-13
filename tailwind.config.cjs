@@ -8,10 +8,13 @@ module.exports = {
         primary: "#21A179",
         whitegrad: "#F7FAF8",
         gardensgreen: "#E6FAF3",
+        gardensform: "#FAFAFA",
       },
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
         ibm: ["IBM Plex Sans", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        tenor: ["Tenor Sans", "sans-serif"],
       },
     },
     screens: {
