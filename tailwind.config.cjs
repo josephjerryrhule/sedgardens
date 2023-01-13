@@ -9,6 +9,7 @@ module.exports = {
         whitegrad: "#F7FAF8",
         gardensgreen: "#E6FAF3",
         gardensform: "#FAFAFA",
+        primarylight: "#21A1794D",
       },
       fontFamily: {
         playfair: ["Playfair Display", "serif"],

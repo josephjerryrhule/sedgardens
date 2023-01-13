@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { logo, loginimage } from "../../assets";
 
-const Register = () => {
+const RegisterRetail = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
       <div className="flex flex-col w-[90%] md:w-[50%] mx-auto">
@@ -12,14 +12,14 @@ const Register = () => {
         <h1 className="font-playfair text-black font-bold text-[50px] leading-[67px] pb-[38px]">
           Sign Up
         </h1>
-        <div className="flex items-center justify-between w-[full] md:w-[375px] h-[42px] border border-[#DCDCDC] rounded-full mb-10 p-1">
+        <div className="flex items-center justify-between w-full md:w-[375px] h-[42px] border border-[#DCDCDC] rounded-full mb-10 p-1">
           <Link to="/register">
-            <button className="rounded-full bg-primarylight text-primary font-ibm font-medium h-[34px] md:w-[184px] w-[147px] text-[12px] md:text-[16px]">
+            <button className="text-[#9CA7B8] font-ibm font-medium h-[34px] md:w-[184px]  w-[130px] text-[12px] md:text-[16px]">
               Sign up as Commercial
             </button>
           </Link>
           <Link to="/registerretail">
-            <button className="text-[#9CA7B8] font-ibm font-medium h-[34px] w-[184px] text-[12px] md:text-[16px]">
+            <button className="rounded-full bg-primarylight text-primary font-ibm font-medium h-[34px] md:w-[184px] w-[147px] text-[12px] md:text-[16px]">
               Sign up as Retail
             </button>
           </Link>
@@ -85,4 +85,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterRetail;
