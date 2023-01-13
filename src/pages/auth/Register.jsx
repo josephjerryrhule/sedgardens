@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { registerWithEmailAndPassword } from "../../firebase";
 import { Link } from "react-router-dom";
 import { logo, loginimage } from "../../assets";
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const register = () => {
+    registerWithEmailAndPassword(email, password);
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">
       <div className="flex flex-col w-[90%] md:w-[50%] mx-auto">
@@ -27,26 +34,28 @@ const Register = () => {
         <span className="hidden md:block font-inter text-black font-normal text-[12px] leading-[14px] md:pb-[15px]">
           Enter your email address and password to create your account
         </span>
-        <form action="">
+        <div className="register">
           <div className="w-full emailarea mb-5">
             <input
               type="email"
-              name=""
+              value={email}
               placeholder="Email address"
-              id=""
-              className="w-full bg-gardensform h-[60px] rounded-md pl-7 font-inter text-[16px] leading-[19px] text-[#808080] outline-0 focus:outline-none"
+              id="registeremail"
+              onChange={(e) => setEmail(e.target.value)}
+              className={`w-full bg-gardensform h-[60px] rounded-md pl-7 font-inter text-[16px] leading-[19px] text-[#808080] outline-0 focus:outline-none peer`}
             />
           </div>
           <div className="w-full passwordarea mb-5 md:mb-16">
             <input
               type="password"
-              name=""
+              value={password}
               placeholder="Enter Password"
-              id=""
+              id="registerpassword"
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-gardensform h-[60px] rounded-md pl-7 font-inter text-[16px] leading-[19px] text-[#808080] outline-0 focus:outline-none"
             />
           </div>
-          <div className="w-full passwordarea mb-5 md:mb-16">
+          {/* <div className="w-full passwordarea mb-5 md:mb-16">
             <input
               type="password"
               name=""
@@ -54,10 +63,11 @@ const Register = () => {
               id=""
               className="w-full bg-gardensform h-[60px] rounded-md pl-7 font-inter text-[16px] leading-[19px] text-[#808080] outline-0 focus:outline-none"
             />
-          </div>
+          </div> */}
           <div className="w-full buttonarea mb-16">
             <button
               type="submit"
+              onClick={register}
               className="
               bg-primary text-white font-ibm font-medium text-center
             text-[16px] leading-[20px] w-full h-[60px] rounded-md"
@@ -75,7 +85,7 @@ const Register = () => {
               </Link>
             </p>
           </div>
-        </form>
+        </div>
       </div>
 
       <div className="hidden md:block loginimagearea">
