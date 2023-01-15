@@ -1,5 +1,6 @@
 import React from "react";
 import { devi, logo } from "../../assets";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -16,11 +17,14 @@ const Hero = () => {
         </p>
       </div>
       <div className="flex flex-col md:flex-row md:items-center md:justify-between md:max-w-[665px] xs:max-w-[300px] gap-2 pb-10">
-        <button className="bg-primary font-ibm text-white md:w-[328px] xs:w-[300px] md:h-[60px] xs:h-[45px] rounded-[5px]">
-          Buy Commercial
-        </button>
-        <button
-          className="
+        <Link to="/login">
+          <button className="bg-primary font-ibm text-white md:w-[328px] xs:w-[300px] md:h-[60px] xs:h-[45px] rounded-[5px]">
+            Buy Commercial
+          </button>
+        </Link>
+        <Link to="/login">
+          <button
+            className="
         md:bg-primary 
         font-ibm 
         md:text-white 
@@ -34,9 +38,10 @@ const Hero = () => {
         xs:text-[16px]
         xs:leading-[20.8px]
         "
-        >
-          Shop Retail
-        </button>
+          >
+            Shop Retail
+          </button>
+        </Link>
       </div>
       <div className="mt-auto">
         <img src={devi} alt="Devi" />
