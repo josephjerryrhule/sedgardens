@@ -11,6 +11,10 @@ import loginimage from "./loginimage.png";
 import search from "./search.svg";
 import cart from "./cart.svg";
 import account from "./account.svg";
+import smcart from "./smcart.svg";
+import choy from "./choy.png";
+import chee from "./chee.png";
+import bok from "./bok.png";
 
 export {
   logo,
@@ -26,4 +30,8 @@ export {
   search,
   cart,
   account,
+  smcart,
+  bok,
+  choy,
+  chee,
 };
