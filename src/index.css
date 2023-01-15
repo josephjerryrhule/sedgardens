@@ -16,3 +16,8 @@
 * {
   scroll-behavior: smooth;
 }
+
+.phonearea .PhoneInputCountryIconImg {
+  width: 39px;
+  height: 40px;
+}

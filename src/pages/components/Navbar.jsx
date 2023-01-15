@@ -46,6 +46,7 @@ const Navbar = () => {
             alt="Search"
             onClick={() => setToggle((prev) => !prev)}
           />
+
           <div
             className={`${
               toggle ? "absolute" : "hidden"

@@ -15,7 +15,6 @@ const Login = () => {
     }
     if (user) navigate("/shop");
   }, [user, loading]);
-  console.log(user);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2">

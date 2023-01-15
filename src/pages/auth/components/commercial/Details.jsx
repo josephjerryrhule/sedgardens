@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { logo, loginimage } from "../../../../assets";
 import { registerWithEmailAndPassword } from "../../../../firebase";
+import Input, { getCountries } from "react-phone-number-input/input";
+import countryNames from "react-phone-number-input/locale/en.json";
 
 const Details = ({ values }) => {
   const { email, password } = values;
@@ -85,10 +87,12 @@ const Details = ({ values }) => {
             />
           </div>
           <div className="w-full companyaddressarea mb-5">
-            <input
-              type="tel"
+            <Input
+              international
+              withCountryCallingCode
+              defaultCountry="GH"
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={setPhone}
               placeholder="Company Phone Number"
               id="companyphone"
               className={`w-full bg-gardensform h-[60px] rounded-md pl-7 font-inter text-[16px] leading-[19px] text-[#808080] outline-0 focus:outline-none peer`}
