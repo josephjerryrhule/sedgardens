@@ -62,20 +62,26 @@ const Navbar = () => {
             } right-0 bg-white rounded-md`}
           >
             <ul className="list-none flex flex-col p-5">
-              <Link to="/dashboard">
+              <Link to="/myaccount/profile">
                 <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3 pt-3">
                   Profile
                 </li>
               </Link>
-              <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3">
-                Orders
-              </li>
-              <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3">
-                Subscription
-              </li>
-              <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3">
-                Security
-              </li>
+              <Link to="/myaccount/orders">
+                <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3">
+                  Orders
+                </li>
+              </Link>
+              <Link to="/myaccount/subscriptions">
+                <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3">
+                  Subscription
+                </li>
+              </Link>
+              <Link to="/myaccount/security">
+                <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3">
+                  Security
+                </li>
+              </Link>
               <li
                 onClick={logout}
                 className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3"
