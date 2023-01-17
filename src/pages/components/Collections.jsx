@@ -52,7 +52,7 @@ flex flex-col items-center
           </Flickity>
         ))}
       </div>
-      <Link to="/login">
+      <Link to="/shop">
         <button className="bg-primary font-ibm text-white md:w-[328px] xs:w-[300px] md:h-[60px] xs:h-[45px] rounded-[5px]">
           Shop More
         </button>

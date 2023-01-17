@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router";
 import { Home, Shop } from "./pages";
+import { MyAccount } from "./pages/account";
 import { Login, Register, RegisterRetail, ResetPassword } from "./pages/auth";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="resetpassword" element={<ResetPassword />} exact></Route>
         <Route path="registerretail" element={<RegisterRetail />} exact></Route>
         <Route path="shop" element={<Shop />} exact></Route>
+        <Route path="dashboard" element={<MyAccount />} exact></Route>
       </Routes>
     </div>
   );

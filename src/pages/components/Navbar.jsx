@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { account, cart, logo, search } from "../../assets";
 import { auth, logout } from "../../firebase";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [user] = useAuthState(auth);
+
   return (
     <div className="flex items-center justify-between h-[230px] bg-white mx-auto w-[90%]">
       <div className="logoarea">
@@ -37,25 +40,33 @@ const Navbar = () => {
       <div className="flex items-center gap-10">
         <img src={search} alt="Search" />
 
-        <Link to="/search">
-          <img src={cart} alt="Search" />
+        <Link to="/cart">
+          <img src={cart} alt="Cart" />
         </Link>
         <div className="account-area relative">
-          <img
-            src={account}
-            alt="Search"
-            onClick={() => setToggle((prev) => !prev)}
-          />
-
+          {user ? (
+            <img
+              src={account}
+              alt="Search"
+              onClick={() => setToggle((prev) => !prev)}
+              className="cursor-pointer"
+            />
+          ) : (
+            <Link to="/login">
+              <img src={account} alt="Search" />
+            </Link>
+          )}
           <div
             className={`${
               toggle ? "absolute" : "hidden"
             } right-0 bg-white rounded-md`}
           >
             <ul className="list-none flex flex-col p-5">
-              <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3 pt-3">
-                Profile
-              </li>
+              <Link to="/dashboard">
+                <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3 pt-3">
+                  Profile
+                </li>
+              </Link>
               <li className="text-black font-ibm font-normal text-[16px] leading-5 cursor-pointer pb-3">
                 Orders
               </li>
