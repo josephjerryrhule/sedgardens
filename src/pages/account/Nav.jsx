@@ -5,10 +5,11 @@ const Nav = () => {
   let active = {
     textDecoration: "underline",
     color: "#21a179",
+    fontWeight: "500",
   };
   return (
     <div className="flex justify-between pt-20">
-      <ul className="list-none font-ibm font-medium text-[18px] leading-6 flex flex-col gap-6 text-[#808080]">
+      <ul className="list-none font-ibm font-normal text-[18px] leading-6 flex flex-col gap-6 text-[#808080]">
         <NavLink
           to="/myaccount/profile"
           style={({ isActive }) => (isActive ? active : null)}
